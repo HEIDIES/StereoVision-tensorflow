@@ -34,8 +34,8 @@ class BM:
         return disp
 
     def coMatch(self, i, j):
-        prevSad_1 = 4294967295
-        prevSad_2 = 4294967295
+        prevSad_1 = 2147483647
+        prevSad_2 = 2147483647
         bestMatchSoFar = self.minDisparity
         bestMatchSoFar_1 = self.minDisparity
         bestMatchSoFar_2 = self.minDisparity
