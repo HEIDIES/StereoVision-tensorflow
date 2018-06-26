@@ -50,7 +50,7 @@ class BM:
         shape = self.left_image.get_shape()
         disp = tf.get_variable('disp', [shape[0], shape[1], 1], tf.int32, tf.zeros_initializer)
         for i in range(0, shape[0]  - self.WindowSize + 1):
-            for j in range(0, shape[1]  - win - self.numberOfDisparities):
+            for j in range(0, shape[1]  - self.WindowSize + 1 - self.numberOfDisparities):
                 bestMatchSoFar = self.coMatch(i, j)
                 indices = tf.constant([[(i + win) * self.image_height + (j + win)]])
                 updates = tf.reshape(bestMatchSoFar, [1])
